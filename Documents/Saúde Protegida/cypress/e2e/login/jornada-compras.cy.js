@@ -1,5 +1,5 @@
 /// <reference types="Cypress" />
-import { locators, login } from '../../fixtures/locators';
+import { locators, login } from '../../locators';
 import { faker } from '@faker-js/faker';
 const firstName = faker.name.firstName();
 const lastName = faker.name.lastName();
@@ -13,9 +13,12 @@ describe('Testes de Login', () => {
     });
     it('Jornada de Compra - Plano Essencial - Fluxo Básico', () => {
         cy.get(locators.planoEssencial).click();
-        cy.get('.gender > :nth-child(3) > .label').click();
-        cy.get('#name').type(fullName);
-        cy.get('#birthDate').type('10/04/2001');
-        cy.get('#cpf').type()
+        cy.get(locators.cadastroMasculino).click();
+        cy.get(locators.cadastroNome).type(fullName);
+        cy.get(locators.cadastroNascimento).type('10/04/2001');
+        cy.get(locators.cadastroCPF).type('501.090.990-10');
+        cy.get(locators.cadastroCelular).type('85984736459');
+        cy.get(locators.cadastroEmail).type(firstName+'@gmail.com');
+        
     });
 });

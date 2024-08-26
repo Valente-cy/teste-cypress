@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
-// cypress/fixtures/locators.js
+// cypress/locators.js
 
-import { locators, login } from '../../fixtures/locators';
+import { locators, login } from '../../locators';
 console.log(locators);
 
 describe('Testes de Login', () => {

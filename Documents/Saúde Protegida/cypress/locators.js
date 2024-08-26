@@ -1,4 +1,4 @@
-// cypress/fixtures/locators.js
+// cypress/locators.js
 
 //Botões
 const locators = {
@@ -21,8 +21,18 @@ const locators = {
     planoPlus:      '.plans-option__container--plus > .plans-option__button > :nth-child(2) > .plans-option__button--step',
     dependenteEssencial: '.plans-option__container--essential > .plans-option__features > :nth-child(2) > .grid__options > :nth-child(3)',
     dependenteEspecial: '.plans-option__container--special > .plans-option__features > :nth-child(2) > .grid__options > :nth-child(3)',
-    dependentePlus: '.plans-option__container--plus > .plans-option__features > :nth-child(2) > .grid__options > :nth-child(3)'
+    dependentePlus: '.plans-option__container--plus > .plans-option__features > :nth-child(2) > .grid__options > :nth-child(3)',
+    cadastroFeminino: '.gender > :nth-child(2) > .label',
+    cadastroMasculino: '.gender > :nth-child(3) > .label',
+    cadastroOutro: ':nth-child(4) > .label',
+    cadastroNome: '#name',
+    cadastroNascimento: '#birthDate',
+    cadastroCPF: '#cpf',
+    cadastroCelular: '#phone',
+    cadastroEmail: '#email',
+    cadastroReemail: '#checkEmail'
   };
+
   
   // Funções
   const login = (cpf, birthDate) => {

@@ -26,7 +26,7 @@ Este projeto utiliza o [Cypress](https://www.cypress.io/) como a principal ferra
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/usuario/repositorio.git
+   git clone https://github.com/Valente-cy/teste-cypress.git
    cd repositorio
    ```
 
@@ -47,8 +47,8 @@ A estrutura principal do projeto é organizada da seguinte forma:
 ```
 cypress/
 │
+├── e2e/            # Onde são feitos e execultados os testes
 ├── fixtures/       # Arquivos estáticos para simular dados
-├── integration/    # Especificações dos testes
 ├── plugins/        # Plugins personalizados do Cypress
 ├── support/        # Comandos e configurações globais
 └── locators.js     # Arquivo com mapeamento de seletores
