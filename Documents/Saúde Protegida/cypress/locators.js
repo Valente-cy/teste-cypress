@@ -30,17 +30,55 @@ const locators = {
     cadastroCPF: '#cpf',
     cadastroCelular: '#phone',
     cadastroEmail: '#email',
-    cadastroReemail: '#checkEmail'
-  };
+    cadastroReemail: '#checkEmail',
+    cadastroTermo: '.checkbox > .label',
+    cadastroContinuar: '.btn',
+    endereçoCEP: '#zipcode',
+    endereçoRua: '#streetName',
+    endereçoNumero: '#streetNumber',
+    endereçoComplemento: '#complement',
+    endereçoBairro: '#neighborhood',
+    endereçoCidade: '#city',
+    endereçoEstado: '#state',
+    selecionarPagamento: '.payment-options',
+    selecionarCartão: '.payment-options__list > :nth-child(1)',
+    numeroCartão: '#numberCard',
+    validadeCartão: '#validateCard',
+    cvvCartão: '#securityCode',
+    nomeCartão: '#nameCard',
+    cpfCartão: '#cpfCard',
 
-  
+
   // Funções
-  const login = (cpf, birthDate) => {
+  aceitartermos: () => {
+    cy.intercept('GET', '**/termos-de-uso**', (req) => {
+      req.destroy(); 
+    });
+
+    cy.intercept('GET', '**/politica-de-privacidade**', (req) => {
+      req.destroy(); 
+    });
+
+    cy.intercept('GET', '**/lei/L13709.htm**', (req) => {
+      req.destroy(); 
+    });
+
+    cy.get('label[for="termsUse"] a').each(($el) => {
+      cy.wrap($el).invoke('removeAttr', 'href');
+    });
+    cy.get('.checkbox > .label').click({force: true})
+  },
+
+  login: (cpf, birthDate) => {
     cy.visit("https://produtos.staging.ciclic.com.br/saude/consulta/");
     cy.get(locators.identityInput).type(cpf);
     cy.get(locators.birthDateInput).type(birthDate);
     cy.get(locators.loginButton).click();
-  };
+  }
+};
+
   
-  export { locators, login };
+
+
+  export { locators };
   
