@@ -47,11 +47,13 @@ A estrutura principal do projeto é organizada da seguinte forma:
 ```
 cypress/
 │
-├── e2e/            # Onde são feitos e execultados os testes
+├── e2e/            # Onde são feitos e executados os testes
 ├── fixtures/       # Arquivos estáticos para simular dados
 ├── plugins/        # Plugins personalizados do Cypress
 ├── support/        # Comandos e configurações globais
-└── locators.js     # Arquivo com mapeamento de seletores
+├── locators.js     # Arquivo com mapeamento de seletores
+└── reports/        # Relatórios de testes gerados
+
 ```
 
 ### Arquivo `locators.js`
@@ -105,6 +107,13 @@ export const locators = {
 ```
 
 Ao utilizar seletores centralizados, evitamos a duplicação e reduzimos a manutenção, facilitando alterações globais nos elementos da aplicação.
+
+## Relatório de Testes
+
+- **Rodando os Testes:** Para rodar os testes deve ser aplicado o comando `npx cypress run` e para rodar um teste específico `npx cypress run --spec "cypress/e2e/seu-teste.cy.js"`.
+- **Gerar Relatório:** Para gerar o relatório dos testes deve se usar `npx mochawesome-merge cypress/reports/mochawesome/*.json -o cypress/reports/mochawesome/output.json` que junta os relatórios Json e o comando `npx marge cypress/reports/mochawesome/output.json -f report -o cypress/reports/mochawesome` que gera o relatório em HTML.
+
+
 
 ## Melhores Práticas
 
