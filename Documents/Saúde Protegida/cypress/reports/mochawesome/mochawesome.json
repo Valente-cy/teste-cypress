@@ -1,0 +1,225 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 6,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-09-30T18:15:08.850Z",
+    "end": "2024-09-30T18:15:31.867Z",
+    "duration": 23017,
+    "testsRegistered": 7,
+    "passPercent": 85.71428571428571,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d46c874e-ac05-4d5c-bd05-6ae6b7bd1969",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login\\login.loc.cy.js",
+      "file": "cypress\\e2e\\login\\login.loc.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "af75b1cc-9155-4890-8964-de60670da8c9",
+          "title": "Testes de Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login corretamente",
+              "fullTitle": "Testes de Login Login corretamente",
+              "timedOut": null,
+              "duration": 8135,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(_locators.locators.identityInput).type(\"31618984276\");\ncy.get(_locators.locators.birthDateInput).type(\"10042001\");\ncy.get(_locators.locators.loginButton).click();\ncy.url().should('eq', 'https://produtos.staging.ciclic.com.br/saude/consulta/selecao-produtos');",
+              "err": {},
+              "uuid": "69a4b500-894d-4418-8d9f-159c3dfab111",
+              "parentUUID": "af75b1cc-9155-4890-8964-de60670da8c9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login com dependente",
+              "fullTitle": "Testes de Login Login com dependente",
+              "timedOut": null,
+              "duration": 5862,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(_locators.locators.identityInput).type(\"62624791124\");\ncy.get(_locators.locators.birthDateInput).type(\"22102015\");\ncy.get(_locators.locators.loginButton).click();\ncy.get(_locators.locators.errorMessage).should('have.text', _locators.locators.errorInvalidCpf);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '[ <span>, 5 more... ]' to have text 'Informações inválidas, verifique e tente novamente', but the text was 'o que você quer fazer?Telemedicina Farmácias e descontos em medicamentosExame LaboratorialConsulta PresencialDúvidas Frequentes'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '[ <span>, 5 more... ]' to have text 'Informações inválidas, verifique e tente novamente', but the text was 'o que você quer fazer?Telemedicina Farmácias e descontos em medicamentosExame LaboratorialConsulta PresencialDúvidas Frequentes'\n    at Context.eval (webpack:///./cypress/e2e/login/login.loc.cy.js:28:38)",
+                "diff": "- 'o que você quer fazer?Telemedicina Farmácias e descontos em medicamentosExame LaboratorialConsulta PresencialDúvidas Frequentes'\n+ 'Informações inválidas, verifique e tente novamente'\n"
+              },
+              "uuid": "004d45ec-89dd-477c-b73a-339d9b439ade",
+              "parentUUID": "af75b1cc-9155-4890-8964-de60670da8c9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login sem CPF",
+              "fullTitle": "Testes de Login Login sem CPF",
+              "timedOut": null,
+              "duration": 1574,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(_locators.locators.identityInput).type(\" \");\ncy.get(_locators.locators.birthDateInput).type(\"10042001\");\ncy.get(_locators.locators.loginButton).click();\ncy.get(_locators.locators.errorMessage).should('have.text', _locators.locators.errorCpfRequired);",
+              "err": {},
+              "uuid": "07d0fba3-a1af-4ce1-bb3a-6ced0effc041",
+              "parentUUID": "af75b1cc-9155-4890-8964-de60670da8c9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login sem Data de Nascimento",
+              "fullTitle": "Testes de Login Login sem Data de Nascimento",
+              "timedOut": null,
+              "duration": 1460,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(_locators.locators.identityInput).type(\"31618984276\");\ncy.get(_locators.locators.birthDateInput).type(\" \");\ncy.get(_locators.locators.loginButton).click();\ncy.get(_locators.locators.errorMessage).should('have.text', _locators.locators.errorBirthDateRequired);",
+              "err": {},
+              "uuid": "34c8648a-99e3-4d17-ad36-82bba87a073c",
+              "parentUUID": "af75b1cc-9155-4890-8964-de60670da8c9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login com CPF incorreto",
+              "fullTitle": "Testes de Login Login com CPF incorreto",
+              "timedOut": null,
+              "duration": 1480,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(_locators.locators.identityInput).type(\"12332122232\");\ncy.get(_locators.locators.birthDateInput).type(\"10042001\");\ncy.get(_locators.locators.loginButton).click();\ncy.get(_locators.locators.errorMessage).should('have.text', _locators.locators.errorInvalidCpfMessage);",
+              "err": {},
+              "uuid": "cb1093fa-b8e1-4db2-ae63-757da22df6f4",
+              "parentUUID": "af75b1cc-9155-4890-8964-de60670da8c9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login com Data de Nascimento incorreta",
+              "fullTitle": "Testes de Login Login com Data de Nascimento incorreta",
+              "timedOut": null,
+              "duration": 1802,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(_locators.locators.identityInput).type(\"31618984276\");\ncy.get(_locators.locators.birthDateInput).type(\"10042007\");\ncy.get(_locators.locators.loginButton).click();\ncy.get(_locators.locators.errorInvalidInfo).should('have.text', 'Informações inválidas, verifique e tente novamente');",
+              "err": {},
+              "uuid": "25413309-4e6d-45c3-8d87-f67cf7593e0a",
+              "parentUUID": "af75b1cc-9155-4890-8964-de60670da8c9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validar texto do botão de interrogação",
+              "fullTitle": "Testes de Login Validar texto do botão de interrogação",
+              "timedOut": null,
+              "duration": 314,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(_locators.locators.tooltip).invoke('attr', 'tooltip').then(tooltipText => {\n  cy.log('Texto do tooltip:', tooltipText);\n  expect(tooltipText).to.contain('Se seu pacote é individual o CPF é o seu. Se seu pacote é casal ou familia o CPF do titular é o do responsável da conta');\n});",
+              "err": {},
+              "uuid": "5c58dc68-837d-48dc-afe3-78d71efdab15",
+              "parentUUID": "af75b1cc-9155-4890-8964-de60670da8c9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "69a4b500-894d-4418-8d9f-159c3dfab111",
+            "07d0fba3-a1af-4ce1-bb3a-6ced0effc041",
+            "34c8648a-99e3-4d17-ad36-82bba87a073c",
+            "cb1093fa-b8e1-4db2-ae63-757da22df6f4",
+            "25413309-4e6d-45c3-8d87-f67cf7593e0a",
+            "5c58dc68-837d-48dc-afe3-78d71efdab15"
+          ],
+          "failures": [
+            "004d45ec-89dd-477c-b73a-339d9b439ade"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 20627,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
